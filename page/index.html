@@ -1,8 +1,65 @@
 <!DOCTYPE html>
-<head>
-</head>
 <html>
+<head>
+    <meta charset="utf-8" />
+    <title> 計算テスト </title>
+    <link type="text/css" rel="stylesheet" href="../css/smoothness/jquery-ui.css" />
+    <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script>
+        $(function() {
+            $('#tabs').tabs({ heightStyle: 'content' });
+        });
+        // タブ読み込み
+        $(function(){
+            $("#mainContent").load("./mainCalc.html");
+            $("#equipmentContent").load("./equipment.html");
+        });
+        $(function() {
+             $( "#sortable" ).sortable();
+            $( "#sortable" ).disableSelection();
+        });
+
+    </script>
+    <style>
+        #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+        #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+        #sortable li span { position: absolute; margin-left: -1.3em; }
+    </style>
+</head>
 <body>
+<!--タブ・パネル全体を定義-->
+<div id="tabs">
+    <!--タブ・リストを定義-->
+    <ul>
+      <li><a href="#main">メイン</a></li>
+      <li><a href="#equipment">装備</a></li>
+    </ul>
+    <!--パネル本体を定義-->
+    <div id="main">
+        <div id="mainContent"></div>
+    </div>
+    <div id="equipment">
+        <div id="equipmentContent"></div>
+    </div>
+</div>
+
 <h1>Hello World</h1>
+<!-- Button -->
+<h2 class="demoHeaders">Button</h2>
+<button id="button">A button element</button>
+<button id="button-icon">An icon-only button</button>
+
+<!-- sortable-->
+<h2 class="demoHeaders">入れ替え</h2>
+<ul id="sortable">
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>項目 1</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>項目 2</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>項目 3</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>項目 4</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>項目 5</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>項目 6</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>項目 7</li>
+</ul>
 </body>
 </html>
